@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+import urllib2
+import urllib
+
+
+f = urllib2.urlopen("http://www.mambiente.munimadrid.es/sica/temporal/20161113162455.04.txt")
+#f = open('datosContaminacion.txt', 'r')#645
+dates = []
+head = 7
+for i, x in enumerate(range(244)):
+    line = f.readline()
+    if i >= head:
+        l = line[0:-1]
+        l = l.split(" ")
+        l = [x for x in l if x != ""]
+        l = ['-1' if x is '-' else x for x in l]
+        dates.append((i - head, l[0], l[1], float(l[2]), float(l[3]), float(l[4])))
+
+date = [x[0] for x in dates]
+SO2 = [x[3] for x in dates]
+CO = [x[4] for x in dates]
+NO2 = [x[5] for x in dates]
+plt.plot(date, NO2, color = 'blue')
+plt.plot(date, CO, color = 'red')
+plt.plot(date, SO2, color = 'green')
+
+plt.xlabel('hours')
+plt.ylabel('ug/m3')
+plt.grid()
+plt.show()

@@ -2,6 +2,22 @@ import matplotlib.pyplot as plt
 import urllib2
 import urllib
 
+import urllib2,urllib
+import cookielib
+
+
+url= "http://www.mambiente.munimadrid.es/sica/scripts/index.php"
+try:
+    hdr = {'User-Agent': 'Mozilla/5.0'}
+    params = urllib.urlencode({"estacion": 4, "dato": 'H', "days ": 10, "graphtype": 'lines'})
+    req = urllib2.Request(url, headers=hdr)
+    f = urllib2.urlopen("http://www.mambiente.munimadrid.es/sica/scripts/index.php",params)
+except urllib2.HTTPError, e:
+    print "Error 403"
+    print e.fp.read()
+
+
+
 
 f = urllib2.urlopen("http://www.mambiente.munimadrid.es/sica/temporal/20161113162455.04.txt")
 #f = open('datosContaminacion.txt', 'r')#645
@@ -28,3 +44,5 @@ plt.xlabel('hours')
 plt.ylabel('ug/m3')
 plt.grid()
 plt.show()
+
+

@@ -1,25 +1,42 @@
+'''albertmena/contaminacionMAdrid
+Code
+Issues 0
+Pull requests 0
+Projects 0
+Wiki
+Pulse
+Graphs
+Settings
+contaminacionMAdrid/cont
+358d6b3 3 days ago
+@albertmena albertmena Update cont
+49 lines (37 sloc) 1.23 KB'''
 import matplotlib.pyplot as plt
 import urllib2
 import urllib
-
+import requests
 import urllib2,urllib
 import cookielib
 
 
-url= "http://www.mambiente.munimadrid.es/sica/scripts/index.php"
+url= "http://www.mambiente.munimadrid.es/opencms/opencms/calaire/busqueda.html?__locale=es"
 try:
     hdr = {'User-Agent': 'Mozilla/5.0'}
     params = urllib.urlencode({"estacion": 4, "dato": 'H', "days ": 10, "graphtype": 'lines'})
     req = urllib2.Request(url, headers=hdr)
-    f = urllib2.urlopen("http://www.mambiente.munimadrid.es/sica/scripts/index.php",params)
+    f = urllib2.urlopen("http://www.mambiente.munimadrid.es/opencms/opencms/calaire/busqueda.html?__locale=es",params)
 except urllib2.HTTPError, e:
     print "Error 403"
     print e.fp.read()
 
 
+urlCont = "http://www.mambiente.munimadrid.es/opencms/opencms/calaire/busqueda.html?__locale=es"
 
+r = requests.get(urlCont)
+print ('Status: {}').format(r.reason)
 
 f = urllib2.urlopen("http://www.mambiente.munimadrid.es/sica/temporal/20161113162455.04.txt")
+
 #f = open('datosContaminacion.txt', 'r')#645
 dates = []
 head = 7

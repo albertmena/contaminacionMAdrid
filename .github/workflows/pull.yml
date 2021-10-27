@@ -1,8 +1,0 @@
-version: "1"
-rules:
-  - base: master
-    upstream: albertmena:master
-    mergeMethod: hardreset
-  - base: docs
-    upstream: albertmena:docs
-    mergeMethod: hardreset

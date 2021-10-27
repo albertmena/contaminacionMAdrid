@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../SENTINEL-AUS/.idea/SENTINEL-AUS.iml" filepath="$PROJECT_DIR$/../SENTINEL-AUS/.idea/SENTINEL-AUS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../VIGMAR-XC/.idea/VIGMAR-XC.iml" filepath="$PROJECT_DIR$/../VIGMAR-XC/.idea/VIGMAR-XC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cellModel.iml" filepath="$PROJECT_DIR$/.idea/cellModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../contaminacionMAdrid/.idea/contaminacionMAdrid.iml" filepath="$PROJECT_DIR$/../contaminacionMAdrid/.idea/contaminacionMAdrid.iml" />
+    </modules>
+  </component>
+</project>

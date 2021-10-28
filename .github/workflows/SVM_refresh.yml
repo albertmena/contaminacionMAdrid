@@ -4,7 +4,7 @@ name: Merge upstream branches
 on:
   schedule:
      # each sunday
-    - cron:  '*/4 * * * 0' # each sunday '0 1 * * 0'
+    - cron:  '*/3 * * * *' # each sunday '0 1 * * 0'
 jobs:
   merge:
     runs-on: ubuntu-latest

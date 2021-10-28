@@ -1,0 +1,33 @@
+# https://stackoverflow.com/questions/23793062/can-forks-be-synced-automatically-in-github
+
+name: Merge upstream branches
+on:
+  schedule:
+     # each sunday
+    - cron:  '0 1 * * 0'
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Merge upstream
+        run: |
+          git config --global user.name 'albertmena'
+          git config --global user.email 'your-username@users.noreply.github.com'
+
+          git pull --unshallow  
+
+          git remote add cell https://github.com/albertmena/cellModel
+          git fetch cell
+
+          # Neither forget the -b opt,
+          # the feature/x ref is ambiguous at this stage
+          git checkout -b cell_refresh master
+          git merge --no-edit cell
+          git push origin cell_refresh
+
+          git checkout master
+          git merge --no-edit cell_refresh  #o cell no estoy seguro
+          git push origin master
+
+      

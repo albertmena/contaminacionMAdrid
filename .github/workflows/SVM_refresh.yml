@@ -13,7 +13,7 @@ jobs:
       - name: Merge upstream
         run: |
           git config --global user.name 'albertmena'
-          git config --global user.email 'your-username@users.noreply.github.com'
+          git config --global user.email 'alber.mena@gmail.com'
 
           git pull --unshallow  
 

@@ -20,8 +20,6 @@ jobs:
           git remote add cell https://github.com/albertmena/cellModel
           git fetch cell
 
-          # Neither forget the -b opt,
-          # the feature/x ref is ambiguous at this stage
           git checkout -b cell_refresh master
           git merge --no-edit cell
           git push origin cell_refresh

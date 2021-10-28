@@ -20,7 +20,7 @@ jobs:
           git remote add cell https://github.com/albertmena/cellModel
           git fetch cell
 
-          git checkout -b cell_refresh master
+          git checkout -b cell_refresh master/contaminacionMAdrid/cellModel-master
           git merge --no-edit cell
           git push origin cell_refresh
 
